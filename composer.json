@@ -4,7 +4,8 @@
   "keywords": [
     "mr-wolf-gb",
     "laravel-update-creator",
-    "update"
+    "update",
+    "laravel"
   ],
   "homepage": "https://github.com/mr-wolf-gb/laravel-update-creator",
   "license": "MIT",
@@ -30,26 +31,19 @@
       "MrWolfGb\\LaravelUpdateCreator\\": "src"
     }
   },
-  "autoload-dev": {
-    "psr-4": {
-      "MrWolfGb\\LaravelUpdateCreator\\Tests\\": "tests"
-    }
-  },
   "scripts": {
     "test": "vendor/bin/phpunit",
     "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
   },
   "config": {
-    "sort-packages": true
+    "sort-packages": true,
+    "optimize-autoloader": true
   },
   "extra": {
     "laravel": {
       "providers": [
         "MrWolfGb\\LaravelUpdateCreator\\LaravelUpdateCreatorServiceProvider"
-      ],
-      "aliases": {
-        "LaravelUpdateCreator": "MrWolfGb\\LaravelUpdateCreator\\LaravelUpdateCreatorFacade"
-      }
+      ]
     }
   }
 }
