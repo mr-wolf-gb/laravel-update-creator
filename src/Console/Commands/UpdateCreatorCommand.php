@@ -16,15 +16,15 @@ class UpdateCreatorCommand extends Command
      *
      * @var string
      */
-    protected $signature = 'update:create {--date= : Backup from date and time} {--version= : Update version} {--clean= : Clean after zipping}';
+    protected $signature = 'update:create {--d= : Backup from date and time} {--v= : Update version} {--c= : Clean after zipping}';
 
     protected $description = 'Command to generate update zip file for laravel application';
 
     public function handle(): void
     {
-        $sinceDate = $this->option('date') ?: $this->ask('Please enter date', today()->toDateTimeString(config('laravel-update-creator.datetime_used', 'minute')));
+        $sinceDate = $this->option('d') ?: $this->ask('Please enter date', today()->toDateTimeString(config('laravel-update-creator.datetime_used', 'minute')));
         $sinceDate = Carbon::parse($sinceDate)->toDateTimeString(config('laravel-update-creator.datetime_used', 'minute'));
-        $version = $this->option('version') ?: $this->ask('Please enter update version', config('laravel-update-creator.default_version', '1.0.0'));
+        $version = $this->option('v') ?: $this->ask('Please enter update version', config('laravel-update-creator.default_version', '1.0.0'));
         $updateDir = base_path(config('laravel-update-creator.update_dir_name'));
         $dirFileName = config('laravel-update-creator.update_file_prefix', 'Update') . "_" . Str::slug($sinceDate . '_' . $version, '_');
         $outputDir = "$updateDir/$dirFileName";
@@ -82,7 +82,7 @@ class UpdateCreatorCommand extends Command
             return;
         }
 
-        if (empty($this->option('clean'))) $this->deleteDirectory($outputDir);
+        if (empty($this->option('c'))) $this->deleteDirectory($outputDir);
     }
 
     private function deleteDirectory(string $directory): void
