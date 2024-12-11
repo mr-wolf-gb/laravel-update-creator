@@ -5,7 +5,7 @@ namespace MrWolfGb\LaravelUpdateCreator;
 use Illuminate\Support\ServiceProvider;
 use MrWolfGb\LaravelUpdateCreator\Console\Commands\UpdateCreatorCommand;
 
-class LaravelUpdateCreatorServiceProvider extends ServiceProvider
+class ServiceProvider extends ServiceProvider
 {
     const CONFIG_PATH = __DIR__.'/../config/config.php';
     /**
