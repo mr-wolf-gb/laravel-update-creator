@@ -25,7 +25,7 @@ composer require mr-wolf-gb/laravel-update-creator
 2. Publish the configuration file (Optional):
 
 ```bash
-php artisan vendor:publish --tag=config --provider="MrWolfGb\\LaravelUpdateCreator\\LaravelUpdateCreatorServiceProvider"
+php artisan vendor:publish --tag=config --provider="MrWolfGb\LaravelUpdateCreator\LaravelUpdateCreatorServiceProvider"
 ```
 
 ## Usage
