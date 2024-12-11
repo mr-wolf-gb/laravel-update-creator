@@ -42,7 +42,7 @@
   "extra": {
     "laravel": {
       "providers": [
-        "MrWolfGb\\LaravelUpdateCreator\\LaravelUpdateCreatorServiceProvider"
+        "MrWolfGb\\LaravelUpdateCreator\\ServiceProvider"
       ]
     }
   }
