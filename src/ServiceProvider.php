@@ -7,20 +7,16 @@ use MrWolfGb\LaravelUpdateCreator\Console\Commands\UpdateCreatorCommand;
 
 class LaravelUpdateCreatorServiceProvider extends ServiceProvider
 {
+    const CONFIG_PATH = __DIR__.'/../config/config.php';
     /**
      * Bootstrap the application services.
      */
     public function boot()
     {
+        $this->publishes([self::CONFIG_PATH => config_path('laravel-update-creator.php')], 'config');
 
         if ($this->app->runningInConsole()) {
-            $this->publishes([
-                __DIR__ . '/../config/config.php' => config_path('laravel-update-creator.php'),
-            ], 'config');
-
-            $this->commands([
-                UpdateCreatorCommand::class,
-            ]);
+            $this->commands([UpdateCreatorCommand::class]);
         }
     }
 
@@ -29,8 +25,6 @@ class LaravelUpdateCreatorServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        // Automatically apply the package configuration
-        $this->mergeConfigFrom(__DIR__ . '/../config/config.php', 'laravel-update-creator');
-
+        $this->mergeConfigFrom(self::CONFIG_PATH , 'laravel-update-creator');
     }
 }
