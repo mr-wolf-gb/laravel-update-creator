@@ -16,13 +16,13 @@ a specified date, excludes unwanted directories and files, and generates a compr
 
 ## Installation
 
-1. Add the package to your Laravel project via Composer:
+- Add the package to your Laravel project via Composer:
 
 ```bash
 composer require mr-wolf-gb/laravel-update-creator
 ```
 
-2. Publish the configuration file (Optional):
+- Publish the configuration file (Optional):
 
 ```bash
 php artisan vendor:publish --tag=config --provider="MrWolfGb\LaravelUpdateCreator\LaravelUpdateCreatorServiceProvider"
