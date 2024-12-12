@@ -32,10 +32,14 @@ php artisan vendor:publish --tag=config --provider="MrWolfGb\LaravelUpdateCreato
 
 ```php
 // specify the date since the modified files to copy them into the update pack
-php artisan update:create --date="2024-01-01" --version="1.2.0"
+php artisan update:create --d="2024-01-01" --v="1.2.0"
+// or
+php artisan update:create --d 2024-01-01 --v 1.2.0
 
 //by default after creating the update zip file the copied temporary files will be deleted, to disable the deletion of temporary files use:
-php artisan update:create --date="2024-01-01" --version="1.2.0" --clean="true"
+php artisan update:create --d="2024-01-01" --v="1.2.0" --c="false"
+// or
+php artisan update:create --d 2024-01-01 --v 1.2.0 --c false
 ```
 
 ### Changelog
